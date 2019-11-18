@@ -26,23 +26,28 @@ MonoBehaviour:
   UserMessagesFailed: 0
   CustomArea: 
   gameKey:
+  - 9fccf22f6c820e929619254c7a2a45ad
   - e0ecd9baf9eb5aa24b9f2fc706dec1f2
   secretKey:
+  - 9760e4bc7f45b3f09b9fe5ee1f52529d71a65513
   - d0a05399fb012bb37d35adbcc402d231d9d496f0
   Build:
   - 0.1
+  - 0.1
   SelectedPlatformStudio:
   - Own
+  - Own
   SelectedPlatformGame:
+  - demo2
   - mydemo
-  SelectedPlatformGameID: 82540100
-  SelectedStudio: 01000000
-  SelectedGame: 01000000
+  SelectedPlatformGameID: 9b54010082540100
+  SelectedStudio: 0100000001000000
+  SelectedGame: 0200000001000000
   NewVersion: 
   Changes: 
   SignUpOpen: 0
   StudioName: 
-  GameName: mydemo
+  GameName: demo2
   EmailGA: afzalmoaaz@gmail.com
   IntroScreen: 0
   InfoLogEditor: 1
@@ -58,7 +63,7 @@ MonoBehaviour:
   ResourceItemTypes: []
   ResourceCurrencies: []
   LastCreatedGamePlatform: -1
-  Platforms: 08000000
+  Platforms: 080000000b000000
   CurrentInspectorState: 1
   ClosedHints: 
   DisplayHints: 0
@@ -85,7 +90,7 @@ MonoBehaviour:
   IncludeGooglePlay: 1
   FpsCriticalThreshold: 20
   FpsCirticalSubmitInterval: 1
-  PlatformFoldOut: 01
+  PlatformFoldOut: 0101
   CustomDimensions01FoldOut: 0
   CustomDimensions02FoldOut: 0
   CustomDimensions03FoldOut: 0

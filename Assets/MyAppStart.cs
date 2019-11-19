@@ -1,30 +1,46 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using GameAnalyticsSDK;
 public class MyAppStart : MonoBehaviour
 {
-	public static string uniqueUserId = "demoUserUnity";
-	public static string appKey = "a934fc75";
+    public static MyAppStart instance;
+	public  string uniqueUserId = "demoUserUnity";
+	public  string appKey = "a934fc75";
     GameObject InitText;
     GameObject ShowButton;
     GameObject ShowText;
     GameObject AmountText;
     int userTotalCredits = 0;
     // Use this for initialization
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+          
+
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
     void Start ()
 	{
-		Debug.Log ("unity-script: MyAppStart Start called");
+        GameAnalytics.Initialize();
+        IronSource.Agent.setAdaptersDebug(true);
+        Debug.Log ("unity-script: MyAppStart Start called");
 
 		//Dynamic config example
 		IronSourceConfig.Instance.setClientSideCallbacks (true);
 
 		string id = IronSource.Agent.getAdvertiserId ();
-		Debug.Log ("unity-script: IronSource.Agent.getAdvertiserId : " + id);
+	
 		
-		Debug.Log ("unity-script: IronSource.Agent.validateIntegration");
-		IronSource.Agent.validateIntegration ();
 
-		Debug.Log ("unity-script: unity version" + IronSource.unityVersion ());
+		
 
 
 
@@ -93,7 +109,7 @@ public class MyAppStart : MonoBehaviour
         IronSource.Agent.init(appKey, IronSourceAdUnits.BANNER);
         //Set User ID For Server To Server Integration
         //// IronSource.Agent.setUserId ("UserId");
-
+        IronSource.Agent.validateIntegration();
         // Load Banner example
         //IronSource.Agent.loadBanner (IronSourceBannerSize.BANNER, IronSourceBannerPosition.BOTTOM);
     }
@@ -250,10 +266,7 @@ public class MyAppStart : MonoBehaviour
 		Debug.Log ("unity-script: OnApplicationPause = " + isPaused);
 		IronSource.Agent.onApplicationPause (isPaused);
 	}
-    public void OnValidate()
-    {
-        IronSource.Agent.validateIntegration();
-    }
+ 
    
 
 }
